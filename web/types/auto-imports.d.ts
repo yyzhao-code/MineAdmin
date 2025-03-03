@@ -80,7 +80,6 @@ declare global {
   const useMenuStore: typeof import('../src/store/modules/useMenuStore')['default']
   const useModel: typeof import('vue')['useModel']
   const usePluginStore: typeof import('../src/store/modules/usePluginStore')['default']
-  const useResourceStore: typeof import('../src/store/modules/useResourceStore')['default']
   const useRoute: typeof import('vue-router')['useRoute']
   const useRouteStore: typeof import('../src/store/modules/useRouteStore')['default']
   const useRouter: typeof import('vue-router')['useRouter']
@@ -100,10 +99,4 @@ declare global {
   // @ts-ignore
   export type { Component, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
-  // @ts-ignore
-  export type { TransType } from '../src/hooks/auto-imports/useTrans'
-  import('../src/hooks/auto-imports/useTrans')
-  // @ts-ignore
-  export type { LoginParams, LoginResult, UserInfo } from '../src/store/modules/useUserStore'
-  import('../src/store/modules/useUserStore')
 }

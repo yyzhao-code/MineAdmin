@@ -46,6 +46,9 @@ final class UserOperationLogRepository extends IRepository
             })
             ->when(Arr::get($params, 'updated_at'), static function (Builder $query, $updated_at) {
                 $query->whereBetween('updated_at', $updated_at);
+            })
+            ->when(Arr::get($params, 'deleted_at'), static function (Builder $query, $deleted_at) {
+                $query->whereBetween('deleted_at', $deleted_at);
             });
     }
 }

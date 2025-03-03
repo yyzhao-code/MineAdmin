@@ -27,6 +27,7 @@ return [
     'updated_by ' => ' Updater ',
     'created_at' => 'Creation time',
     'updated_at ' => ' Update time ',
+    'deleted_at' => 'Delete time',
     'Remark ' => ' Remark ',
     'username_exist' => 'Username already exists',
     'Enums' => [

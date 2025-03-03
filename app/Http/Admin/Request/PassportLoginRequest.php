@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace App\Http\Admin\Request;
 
-use App\Http\Common\Request\Traits\NoAuthorizeTrait;
 use Hyperf\Collection\Arr;
 use Hyperf\Swagger\Annotation\Property;
 use Hyperf\Swagger\Annotation\Schema;
@@ -28,7 +27,11 @@ class PassportLoginRequest extends FormRequest
 {
     use ClientIpRequestTrait;
     use ClientOsTrait;
-    use NoAuthorizeTrait;
+
+    public function authorize(): bool
+    {
+        return true;
+    }
 
     public function rules(): array
     {

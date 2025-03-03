@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace App\Http\Admin\Request\Permission;
 
-use App\Http\Common\Request\Traits\NoAuthorizeTrait;
 use Hyperf\Swagger\Annotation\Property;
 use Hyperf\Swagger\Annotation\Schema;
 use Hyperf\Validation\Request\FormRequest;
@@ -25,7 +24,10 @@ use Hyperf\Validation\Request\FormRequest;
 )]
 class BatchGrantPermissionsForRoleRequest extends FormRequest
 {
-    use NoAuthorizeTrait;
+    public function authorize(): bool
+    {
+        return true;
+    }
 
     public function rules(): array
     {

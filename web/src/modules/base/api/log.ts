@@ -37,6 +37,7 @@ export interface RequestLogInfoVo {
   ip: string
   created_at: string
   updated_at: string
+  deleted_at: string
   // 备注信息
   remark: string
 }

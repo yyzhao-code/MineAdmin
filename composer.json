@@ -56,14 +56,14 @@
     "hyperf/server": "3.1.*",
     "hyperf/utils": "3.1.*",
     "hyperf/validation": "~3.1",
-    "mineadmin/access": "~3.0",
-    "mineadmin/app-store": "~3.0",
-    "mineadmin/auth-jwt": "~3.0",
-    "mineadmin/core": "~3.0",
-    "mineadmin/jwt": "~3.0",
-    "mineadmin/support": "~3.0",
-    "mineadmin/swagger": "~3.0",
-    "mineadmin/upload": "~3.0"
+    "mineadmin/access": "3.0",
+    "mineadmin/app-store": "3.0",
+    "mineadmin/auth-jwt": "3.0",
+    "mineadmin/core": "3.0",
+    "mineadmin/jwt": "3.0",
+    "mineadmin/support": "3.0",
+    "mineadmin/swagger": "3.0",
+    "mineadmin/upload": "3.0"
   },
   "require-dev": {
     "doctrine/dbal": "^3.6",
@@ -74,7 +74,7 @@
     "hyperf/testing": "3.1.*",
     "hyperf/watcher": "3.1.*",
     "mockery/mockery": "^1.0",
-    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan": "^1.10",
     "swoole/ide-helper": "^6.0",
     "zircote/swagger-php": "4.10.6"
   },
@@ -99,7 +99,8 @@
   "prefer-stable": true,
   "config": {
     "optimize-autoloader": true,
-    "sort-packages": true
+    "sort-packages": true,
+    "process-timeout": 600
   },
   "extra": {
     "branch-alias": {
@@ -131,5 +132,11 @@
       "Composer\\Config::disableProcessTimeout",
       "php bin/hyperf.php server:watch"
     ]
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
   }
 }

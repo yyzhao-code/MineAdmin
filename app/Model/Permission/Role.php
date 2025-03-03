@@ -15,7 +15,6 @@ namespace App\Model\Permission;
 use App\Model\Enums\User\Status;
 use Carbon\Carbon;
 use Hyperf\Database\Model\Collection;
-use Hyperf\Database\Model\Events\Deleting;
 use Hyperf\Database\Model\Relations\BelongsToMany;
 use Hyperf\DbConnection\Model\Model as MineModel;
 
@@ -83,11 +82,5 @@ final class Role extends MineModel
             'role_id',
             'user_id'
         );
-    }
-
-    public function deleting(Deleting $event)
-    {
-        $this->users()->detach();
-        $this->menus()->detach();
     }
 }

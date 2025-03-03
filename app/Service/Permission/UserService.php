@@ -20,7 +20,7 @@ use App\Service\IService;
 use Hyperf\Collection\Collection;
 
 /**
- * @extends IService<User>
+ * @extends IService<UserRepository>
  */
 final class UserService extends IService
 {

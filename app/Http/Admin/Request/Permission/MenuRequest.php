@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace App\Http\Admin\Request\Permission;
 
-use App\Http\Common\Request\Traits\NoAuthorizeTrait;
 use App\Schema\MenuSchema;
 use Hyperf\Validation\Request\FormRequest;
 
@@ -25,7 +24,10 @@ use Hyperf\Validation\Request\FormRequest;
 )]
 class MenuRequest extends FormRequest
 {
-    use NoAuthorizeTrait;
+    public function authorize()
+    {
+        return true;
+    }
 
     public function rules(): array
     {
@@ -51,7 +53,6 @@ class MenuRequest extends FormRequest
             'meta.copyright' => 'sometimes|boolean',
             'meta.componentPath' => 'sometimes|string|max:64',
             'meta.componentSuffix' => 'sometimes|string|max:4',
-            'meta.activeName' => 'sometimes|string|max:255',
             'btnPermission' => 'sometimes|array',
         ];
     }
@@ -77,7 +78,6 @@ class MenuRequest extends FormRequest
             'meta.type' => trans('menu.meta.type'),
             'meta.cache' => trans('menu.meta.cache'),
             'meta.link' => trans('menu.meta.link'),
-            'meta.activeName' => trans('menu.meta.activeName'),
         ];
     }
 }
